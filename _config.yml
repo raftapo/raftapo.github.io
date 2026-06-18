@@ -23,14 +23,14 @@ repository               : "raftapo/raftapo.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Aristeidis Raftapostolos"
   pronouns         : # example: "she/her"  
-  bio              : "Assistant Professor in Finance "
+  bio              : "Assistant Professor in Finance"
   location         : #"Earth"
   employer         : #"Red Brick University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "aristeidis.1.raftapostolos@kcl.ac.uk"
 
   # Academic websites
   academia         : # URL
