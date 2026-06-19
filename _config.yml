@@ -84,12 +84,16 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Peer-Reviewed Articles'
+  working_papers:
+    title: 'Working Papers'
+  work_in_progress:
+    title: 'Work in Progress'
   conferences:
     title: 'Conference Papers'
+  books:
+    title: 'Books'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
