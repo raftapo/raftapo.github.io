@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/foundations-of-mathematics
 venue: "King's College London, King's Business School"
-date: 2025, 2026
+years: "2025–present"
 share: false
 ---
 

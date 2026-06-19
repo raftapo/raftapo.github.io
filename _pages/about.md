@@ -1,13 +1,12 @@
 ---
 permalink: /
-title: "About me"
+title: "Welcome! "
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Welcome! 
 
 I am an Assistant Professor (Lecturer) in Finance in the [Department of Banking & Finance](https://www.kcl.ac.uk/business/research/departments/banking-finance) at King's College London, focusing on Machine Learning and Bayesian time series econometrics and their applications in macroeconomics and finance. 
 
