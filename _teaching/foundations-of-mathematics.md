@@ -15,4 +15,6 @@ The aims of this module are to:
 - Develop problem-solving skills through optimization techniques, including both unconstrained and constrained optimization, and
 - Equip students with the mathematical tools to apply these techniques to real-world problems in data analytics, business, and finance.
 
-[//]: # ([Download the syllabus &#40;PDF&#41;]&#40;/files/foundations-syllabus.pdf&#41;)
+{% comment %}
+([Download the syllabus &#40;PDF&#41;]&#40;/files/foundations-syllabus.pdf&#41;)
+{% endcomment %}
