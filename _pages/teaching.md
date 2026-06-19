@@ -8,7 +8,7 @@ author_profile: true
 ## Teaching Experience
 
 **King's College London**, King's Business School, UK — *2023–present*
-- 4QQMN908: [Foundations of Mathematics](/_teaching/foundations-of-mathematics.md), BSc — *Instructor*
+- 4QQMN908: [Foundations of Mathematics](/teaching/foundations-of-mathematics), BSc — *Instructor*
 - 4QQMN909: Principles of Programming, BSc — *Instructor*
 - 5QQMN946: Programming for Data Analytics, BSc — *Instructor*
 - 7QQMM811: Introduction to Analytics in Finance, MSc — *Teaching Assistant*
