@@ -4,6 +4,8 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/foundations-of-mathematics
 venue: "King's College London, King's Business School"
+date: 2025, 2026
+share: false
 ---
 
 **BSc · Instructor**
@@ -16,5 +18,5 @@ The aims of this module are to:
 - Equip students with the mathematical tools to apply these techniques to real-world problems in data analytics, business, and finance.
 
 {% comment %}
-([Download the syllabus &#40;PDF&#41;]&#40;/files/foundations-syllabus.pdf&#41;)
+[Download the syllabus (PDF)](/files/foundations-syllabus.pdf)
 {% endcomment %}
