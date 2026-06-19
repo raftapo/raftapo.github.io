@@ -27,7 +27,7 @@
       <h2 class="archive__item-title" itemprop="headline"><label for="abs-{{ tid }}">{{ title }}</label></h2>
       <p>
         {% if post.coauthors %}{{ post.coauthors }}<br />{% endif %}
-        <i>{{ post.journal }}</i>{% if post.year %}, {{ post.year }}{% endif %}{% if post.issue and post.issue != "" %} ({{ post.issue }}){% endif %}{% if post.doi %}<br />DOI: <a href="{{ post.doi }}">{{ post.doi | remove: "https://doi.org/" }}</a>{% endif %}
+        {% if post.journal and post.journal != "" %}<i>{{ post.journal }}</i>{% if post.year %}, {{ post.year }}{% endif %}{% elsif post.year %}{{ post.year }}{% endif %}{% if post.issue and post.issue != "" %} ({{ post.issue }}){% endif %}{% if post.doi and post.doi != "" %}<br />DOI: <a href="{{ post.doi }}">{{ post.doi | remove: "https://doi.org/" }}</a>{% endif %}
       </p>
       <div class="abstract-content">{{ post.content }}</div>
 
