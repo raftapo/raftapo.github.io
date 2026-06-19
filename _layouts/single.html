@@ -36,6 +36,11 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.collection == 'publications' %}
+          <p>
+            {% if page.coauthors %}{{ page.coauthors }}<br />{% endif %}
+            <i>{{ page.journal }}</i>{% if page.year %}, {{ page.year }}{% endif %}{% if page.issue and page.issue != "" %} ({{ page.issue }}){% endif %}{% if page.doi %}<br />DOI: <a href="{{ page.doi }}">{{ page.doi | remove: "https://doi.org/" }}</a>{% endif %}
+          </p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
