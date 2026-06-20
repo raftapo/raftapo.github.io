@@ -9,8 +9,8 @@ author_profile: true
 
 **King's College London**, King's Business School, UK — *2023–present*
 - 4QQMN908: [Foundations of Mathematics](/teaching/foundations-of-mathematics), BSc — *Instructor*
-- 4QQMN909: Principles of Programming, BSc — *Instructor*
-- 5QQMN946: Programming for Data Analytics, BSc — *Instructor*
+- 4QQMN909: [Principles of Programming](/teaching/principles-of-programming), BSc — *Instructor*
+- 5QQMN946: [Programming for Data Analytics](/teaching/programming-for-data-analytics), BSc — *Instructor*
 - 7QQMM811: Introduction to Analytics in Finance, MSc — *Teaching Assistant*
 - 7QQMM813: Big Data Analytics and Visualisation, MSc — *Teaching Assistant*
 - 7SSMM702: Commercial and Investment Banking, MSc — *Teaching Assistant*
