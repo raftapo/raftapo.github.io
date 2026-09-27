@@ -27,7 +27,10 @@ main:
   - title: "CV"
     url: /files/AR_CV.pdf
 #    url: /cv/
-    
+
+  - title: "Math & AI"
+    url: /math-ai/
+
   # - title: "CV"
   #   url: /cv-json/
     

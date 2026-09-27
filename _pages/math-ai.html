@@ -1,0 +1,337 @@
+---
+layout: single
+title: "Math & AI"
+permalink: /math-ai/
+author_profile: false
+description: "Mathematical theory, revealable exercises, and an interactive gradient-descent lab."
+---
+<!-- This page is public. There is no password, encryption, iframe, or unlock step. -->
+<!-- Academic Pages supplies MathJax; avoid loading a second copy here. -->
+<link rel="stylesheet" href="{{ '/assets/css/math-ai.css' | relative_url }}">
+
+<!--<div class="ma" data-dropbox-app-key="{{ site.data.math_ai.dropbox_app_key | default: '' | escape }}" data-resources-url="{{ site.data.math_ai.dropbox_resources_url | default: '' | escape }}" id="math-ai">&lt;!&ndash; PUBLIC EDITABLE LESSONS: edit the text below; keep existing IDs for interactive controls. &ndash;&gt;-->
+<div class="ma" id="math-ai">
+<noscript>The theory and revealable solutions are available without JavaScript. </noscript>
+<!--    Enable JavaScript for the interactive plot, study-prompt builder, and note importer.-->
+<header class="ma-intro">
+<p class="ma-eyebrow">LEARN · PRACTISE · EXPERIMENT</p>
+<h2 id="ma-welcome-title" tabindex="-1">From mathematical ideas to learning machines.</h2>
+<p>Read a short explanation, try a problem, then reveal a hint or a worked
+       solution. </p>
+<!--    Use the lab to see how a model learns, and take your questions to ChatGPT.-->
+</header>
+<nav aria-label="Math and AI sections" class="ma-nav">
+<a href="#ma-theory">Theory</a>
+<a href="#ma-exercises">Exercises</a>
+<a href="#ma-lab">Machine-learning lab</a>
+<!--<a href="#ma-resources">Dropbox &amp; notes</a>-->
+<a href="#ma-tutor">AI study companion</a>
+</nav>
+<!-- THEORY: change or add theory cards here. --><section aria-labelledby="ma-theory-title" id="ma-theory">
+<p class="ma-eyebrow">01 / THE FOUNDATIONS</p>
+<h2 id="ma-theory-title">A little theory, then a problem.</h2>
+<div class="ma-grid">
+<article class="ma-card">
+<p class="ma-tag">LINEAR ALGEBRA</p>
+<h3>Vectors and dot products</h3>
+<p>A vector groups numbers together. A dot product multiplies matching
+           entries and adds the results:</p>
+<div class="ma-equation">\[\mathbf{x}^{\mathsf T}\mathbf{w}=\sum_{j=1}^{d}x_jw_j.\]</div>
+<p>A linear model can turn features into a prediction using
+           \(\hat y=\mathbf{x}^{\mathsf T}\mathbf{w}+b\).</p>
+<a href="#ma-ex-dot">Try a dot product →</a>
+</article>
+<article class="ma-card">
+<p class="ma-tag">CALCULUS</p>
+<h3>Derivatives and gradients</h3>
+<p>A derivative describes local change. A gradient collects the partial
+           derivatives of a function of several variables:</p>
+<div class="ma-equation">\[\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right).\]</div>
+<p>For a differentiable function with a nonzero gradient, a sufficiently small
+           step in the negative-gradient direction decreases the function.</p>
+<a href="#ma-ex-gradient">Calculate a gradient →</a>
+</article>
+<article class="ma-card">
+<p class="ma-tag">PROBABILITY</p>
+<h3>Condition on what you know</h3>
+<p>Conditional probability restricts attention to the event you know has happened:</p>
+<div class="ma-equation">\[P(A\mid B)=\frac{P(A\cap B)}{P(B)},\qquad P(B)&gt;0.\]</div>
+<p>In a finite, equally likely sample space, count the outcomes in both events
+           and divide by the number of outcomes in the conditioning event.</p>
+<a href="#ma-ex-probability">Try a probability problem →</a>
+</article>
+<article class="ma-card">
+<p class="ma-tag">MACHINE LEARNING</p>
+<h3>Fit a model by reducing loss</h3>
+<p>For labelled pairs \((x_i,y_i)\), our small model predicts \(\hat y_i=wx_i\).
+           Its mean squared error measures disagreement with the target values:</p>
+<div class="ma-equation">\[J(w)=\frac{1}{n}\sum_{i=1}^{n}(wx_i-y_i)^2.\]</div>
+<p>Choose a learning rate \(\eta\), compute the derivative, and update
+           \(w\leftarrow w-\eta J'(w)\).</p>
+<a href="#ma-lab">Train the model →</a>
+</article>
+</div>
+</section>
+<!-- EXERCISES: add an article with a unique ID before this section closes. --><section aria-labelledby="ma-exercises-title" id="ma-exercises">
+<p class="ma-eyebrow">02 / ACTIVE PRACTICE</p>
+<h2 id="ma-exercises-title">Try first. Reveal when ready.</h2>
+<p>These are practice problems, not a secure test: the solutions are part of this page.</p>
+<article class="ma-exercise" id="ma-ex-dot">
+<p class="ma-tag">EXERCISE 1 · VECTORS</p>
+<h3>A three-dimensional dot product</h3>
+<p>Let \(\mathbf{x}=(1,2,3)\) and \(\mathbf{w}=(4,-1,2)\).
+         Compute \(\mathbf{x}^{\mathsf T}\mathbf{w}\).</p>
+<details><summary>Reveal a hint</summary><div class="ma-reveal">
+<p>Multiply the first entries, then the second entries, then the third entries. Add the three products.</p>
+</div></details>
+<details><summary>Reveal the worked solution</summary><div class="ma-reveal">
+<div class="ma-equation">\[1\cdot4+2\cdot(-1)+3\cdot2=4-2+6=\boxed{8}.\]</div>
+<p>The result is one number, not another three-dimensional vector.</p>
+</div></details>
+<button class="ma-link-button" data-tutor-exercise="dot" type="button">Prepare an AI question about this exercise →</button>
+</article>
+<article class="ma-exercise" id="ma-ex-gradient">
+<p class="ma-tag">EXERCISE 2 · GRADIENTS</p>
+<h3>Differentiate one variable at a time</h3>
+<p>For \(f(x,y)=x^2+3y^2\), find \(\nabla f(1,2)\).</p>
+<details><summary>Reveal a hint</summary><div class="ma-reveal">
+<p>When differentiating with respect to \(x\), treat \(y\) as constant, and vice versa.</p>
+</div></details>
+<details><summary>Reveal the worked solution</summary><div class="ma-reveal">
+<div class="ma-equation">\[\frac{\partial f}{\partial x}=2x,\qquad
+          \frac{\partial f}{\partial y}=6y.\]</div>
+<div class="ma-equation">\[\nabla f(1,2)=(2\cdot1,6\cdot2)=\boxed{(2,12)}.\]</div>
+</div></details>
+<button class="ma-link-button" data-tutor-exercise="gradient" type="button">Prepare an AI question about this exercise →</button>
+</article>
+<article class="ma-exercise" id="ma-ex-probability">
+<p class="ma-tag">EXERCISE 3 · CONDITIONAL PROBABILITY</p>
+<h3>A fair die with extra information</h3>
+<p>A fair six-sided die is rolled. Given that the result is even, what is the
+         probability that it is greater than 3?</p>
+<details><summary>Reveal a hint</summary><div class="ma-reveal">
+<p>After conditioning on an even result, the possible values are 2, 4, and 6.</p>
+</div></details>
+<details><summary>Reveal the worked solution</summary><div class="ma-reveal">
+<p>Let \(A=\{4,5,6\}\) and \(B=\{2,4,6\}\). Their intersection is \(\{4,6\}\).</p>
+<div class="ma-equation">\[P(A\mid B)=\frac{2/6}{3/6}=\boxed{\frac{2}{3}}.\]</div>
+</div></details>
+<button class="ma-link-button" data-tutor-exercise="probability" type="button">Prepare an AI question about this exercise →</button>
+</article>
+<article class="ma-exercise" id="ma-ex-update">
+<p class="ma-tag">EXERCISE 4 · OPTIMISATION</p>
+<h3>Take one gradient-descent step</h3>
+<p>Minimise \(J(w)=(w-3)^2\). Starting at \(w_0=0\), use a learning rate
+         \(\eta=0.1\) to find \(w_1\).</p>
+<details><summary>Reveal a hint</summary><div class="ma-reveal">
+<p>Compute \(J'(w)=2(w-3)\), then use \(w_1=w_0-\eta J'(w_0)\).</p>
+</div></details>
+<details><summary>Reveal the worked solution</summary><div class="ma-reveal">
+<div class="ma-equation">\[J'(0)=-6,\qquad w_1=0-0.1(-6)=\boxed{0.6}.\]</div>
+<p>The loss decreases from \(J(0)=9\) to \(J(0.6)=5.76\).</p>
+</div></details>
+<button class="ma-link-button" data-tutor-exercise="update" type="button">Prepare an AI question about this exercise →</button>
+</article>
+</section>
+<!-- LAB: theory and displayed Python are here. The live algorithm is in assets/js/math-ai.js. --><section aria-labelledby="ma-lab-title" id="ma-lab">
+<p class="ma-eyebrow">03 / INTERACTIVE GRADIENT DESCENT</p>
+<h2 id="ma-lab-title">See what the slope and intercept actually do.</h2>
+<p>This lab uses a straight-line model</p>
+<div class="ma-equation">\[\hat y=ax+b.\]</div>
+<p>The parameter <strong>\(a\)</strong> is the slope (the model weight) and
+       <strong>\(b\)</strong> is the intercept (the bias). Each choice of
+       \(a\) and \(b\) produces a different fitted line and therefore a different error.</p>
+<div class="ma-grid ma-theory-steps">
+<article class="ma-card">
+<p class="ma-tag">1 · PREDICT</p>
+<h3>Use the current line</h3>
+<div class="ma-equation">\[\hat y_i=ax_i+b.\]</div>
+<p>For every observed input \(x_i\), the line gives a predicted value \(\hat y_i\).</p>
+</article>
+<article class="ma-card">
+<p class="ma-tag">2 · MEASURE ERROR</p>
+<h3>Mean squared error</h3>
+<div class="ma-equation">\[J(a,b)=\frac1n\sum_{i=1}^{n}(ax_i+b-y_i)^2.\]</div>
+<p>Squaring makes positive and negative residuals contribute positively. A smaller MSE means the line is closer to the data overall.</p>
+</article>
+<article class="ma-card">
+<p class="ma-tag">3 · FIND THE GRADIENT</p>
+<h3>Which way increases the loss?</h3>
+<div class="ma-equation">\[\frac{\partial J}{\partial a}=\frac{2}{n}\sum x_i(\hat y_i-y_i),\qquad
+          \frac{\partial J}{\partial b}=\frac{2}{n}\sum(\hat y_i-y_i).\]</div>
+<p>The two derivatives tell us how sensitive the loss is to the slope and the intercept.</p>
+</article>
+<article class="ma-card">
+<p class="ma-tag">4 · STEP DOWNHILL</p>
+<h3>Gradient-descent update</h3>
+<div class="ma-equation">\[a\leftarrow a-\eta\frac{\partial J}{\partial a},\qquad
+          b\leftarrow b-\eta\frac{\partial J}{\partial b}.\]</div>
+<p>The learning rate \(\eta\) controls the step size. With a suitable learning rate, repeated updates reduce the loss; a rate that is too large can make it grow.</p>
+</article>
+</div>
+<div class="ma-notice">
+<p><strong>Geometric picture.</strong> Imagine a surface whose horizontal coordinates are \(a\) and \(b\), and whose height is \(J(a,b)\). The gradient points uphill. Gradient descent moves in the opposite direction, toward lower loss.</p>
+</div>
+<div class="ma-lab-layout">
+<div class="ma-panel ma-controls">
+<h3>Try the parameters yourself</h3>
+<label for="ma-a">Slope \(a\) <output id="ma-a-value">1.00</output></label>
+<input disabled="" id="ma-a" max="7" min="-1" step="0.05" type="range" value="1"/>
+<label for="ma-b">Intercept \(b\) <output id="ma-b-value">0.00</output></label>
+<input disabled="" id="ma-b" max="4" min="-2" step="0.05" type="range" value="0"/>
+<label for="ma-rate">Learning rate \(\eta\)</label>
+<select disabled="" id="ma-rate">
+<option value="0.01">0.01 — very small steps</option>
+<option value="0.05">0.05 — small steps</option>
+<option selected="" value="0.08">0.08 — good for this demo</option>
+<option value="0.20">0.20 — larger steps</option>
+<option value="0.50">0.50 — deliberately aggressive</option>
+</select>
+<div class="ma-actions">
+<button disabled="" id="ma-step" type="button">One gradient step</button>
+<button disabled="" id="ma-ten" type="button">Run 25 steps</button>
+<button class="ma-secondary" disabled="" id="ma-reset" type="button">Reset</button>
+</div>
+<div aria-label="Current gradient-descent results" class="ma-metrics">
+<div><span>Step</span><output id="ma-step-value">0</output></div>
+<div><span>Current model</span><output id="ma-model-value">ŷ = 1.00x + 0.00</output></div>
+<div><span>Mean squared error</span><output id="ma-loss-value">20.0067</output></div>
+</div>
+<p id="ma-lab-status" role="status">Move the sliders to fit the points manually, or let gradient descent update the parameters.</p>
+</div>
+<div class="ma-panel ma-plot-panel">
+<div class="ma-plot-heading">
+<div>
+<p class="ma-tag">LIVE PLOT</p>
+<h3>Data and fitted line</h3>
+</div>
+<p class="ma-small">The line updates immediately when \(a\) or \(b\) changes.</p>
+</div>
+<svg aria-label="Scatter plot of training data with an adjustable regression line" class="ma-plot" id="ma-regression-plot" role="img" viewBox="0 0 680 430"></svg>
+</div>
+</div>
+<details><summary>What should I notice while experimenting?</summary><div class="ma-reveal">
+<ul>
+<li>Changing \(a\) rotates the line because it changes the slope.</li>
+<li>Changing \(b\) shifts the line vertically because it changes the intercept.</li>
+<li>A visually better fit normally produces a smaller MSE.</li>
+<li>With a sensible learning rate, repeated gradient steps reduce the loss and move the line toward the data.</li>
+<li>A learning rate that is too large can overshoot and make the loss grow or oscillate.</li>
+</ul>
+</div></details>
+<article class="ma-code-card">
+<p class="ma-tag">PYTHON · SAME ALGORITHM</p>
+<h3>Gradient descent for linear regression</h3>
+<p>The browser lab above uses the same mathematics as this NumPy implementation. The code is shown after the theory so each line has a mathematical meaning.</p>
+<pre class="ma-code"><code>import numpy as np
+
+# Example data: approximately y = 4x + 1
+x = np.array([0.00, 0.25, 0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00])
+y = np.array([1.10, 2.10, 2.80, 4.20, 5.10, 5.80, 7.20, 7.90, 9.10])
+
+# Start with a deliberately poor line
+a = 1.0
+b = 0.0
+eta = 0.08
+
+for step in range(200):
+    y_hat = a * x + b
+    error = y_hat - y
+
+    # Partial derivatives of mean squared error
+    da = (2 / len(x)) * np.sum(x * error)
+    db = (2 / len(x)) * np.sum(error)
+
+    # Gradient-descent update
+    a = a - eta * da
+    b = b - eta * db
+
+mse = np.mean((a * x + b - y) ** 2)
+print(f"a = {a:.4f}, b = {b:.4f}, MSE = {mse:.4f}")</code></pre>
+</article>
+<article class="ma-exercise" id="ma-ex-regression">
+<p class="ma-tag">EXERCISE 5 · INTERACTIVE REGRESSION</p>
+<h3>Fit the line before asking the algorithm</h3>
+<p>Use the sliders to find values of \(a\) and \(b\) that give a small MSE. Write down your values. Then reset the lab and run gradient descent. Compare your manual fit with the values found by the algorithm.</p>
+<details><summary>Reveal a hint</summary><div class="ma-reveal">
+<p>The points were generated near a line with a positive slope around 4 and an intercept around 1. Try changing one parameter at a time and watch the MSE.</p>
+</div></details>
+<details><summary>Reveal the interpretation</summary><div class="ma-reveal">
+<p>Your exact best-fitting values need not be exactly \(a=4\) and \(b=1\), because the displayed data include small deviations from that ideal line. Least squares chooses the values that minimise the total squared residuals for the actual points.</p>
+</div></details>
+<button class="ma-link-button" data-tutor-exercise="regression" type="button">Prepare an AI question about this lab →</button>
+</article>
+<p class="ma-small">This is a teaching example. The data are fixed and illustrative; it does not evaluate generalisation to unseen data.</p>
+</section>
+<!--</section>-->
+<!--&lt;!&ndash; OPTIONAL RESOURCES: configure _data/math_ai.yml; never enter API secrets. &ndash;&gt;<section aria-labelledby="ma-resources-title" id="ma-resources">-->
+<!--<p class="ma-eyebrow">04 / BRING YOUR NOTES</p>-->
+<!--<h2 id="ma-resources-title">Dropbox resources &amp; study notes.</h2>-->
+<!--<p>Browse the course folder, or bring a small text note into the prompt builder.-->
+<!--       PDFs and notebooks can live in the course folder; this importer reads only UTF-8-->
+<!--       <code>.txt</code> and <code>.md</code> files, up to 40 KB and 12,000 characters.</p>-->
+<!--<a class="ma-button ma-secondary" hidden="" id="ma-folder-link" rel="noopener noreferrer" target="_blank">Open course resources in Dropbox ↗</a>-->
+<!--<p class="ma-small" id="ma-folder-status">The site owner has not configured a course-folder link yet.</p>-->
+<!--<div class="ma-panel">-->
+<!--<button disabled="" id="ma-dropbox" type="button">Enable Dropbox picker</button>-->
+<!--<p class="ma-small" id="ma-dropbox-status" role="status">Dropbox importing needs the site owner's public Chooser app key.</p>-->
+<!--<label for="ma-local-file">Or choose a text note from your device</label>-->
+<!--<input accept=".txt,.md,text/plain,text/markdown" id="ma-local-file" type="file"/>-->
+<!--<p class="ma-small" id="ma-note-status" role="status">No note selected. You can also paste a note below.</p>-->
+<!--<label for="ma-note">Review or edit your note before sharing it</label>-->
+<!--<textarea id="ma-note" maxlength="12000" placeholder="Paste a short study note here, or import one above." rows="6"></textarea>-->
+<!--<label class="ma-checkbox"><input id="ma-include-note" type="checkbox"/>-->
+<!--<span>Include this note when I create my ChatGPT prompt.</span></label>-->
+<!--<button class="ma-secondary" id="ma-clear-note" type="button">Clear note</button>-->
+<!--<p class="ma-small">Notes stay in this page until you copy and paste the prompt elsewhere.-->
+<!--        The add-on does not save notes to a server or browser storage. Enabling the Dropbox picker-->
+<!--        loads Dropbox's code, and selecting a file retrieves it from Dropbox.-->
+<!--        Do not include confidential or identifying student information.</p>-->
+<!--</div>-->
+<!--</section>-->
+<!-- PROMPTS: matching exercise texts live in the topics object in assets/js/math-ai.js. --><section aria-labelledby="ma-tutor-title" id="ma-tutor">
+<p class="ma-eyebrow">04 / ASK BETTER QUESTIONS</p>
+<h2 id="ma-tutor-title">An AI study companion.</h2>
+<p>Create a focused tutoring prompt, review it, copy it, and open ChatGPT in another tab.
+       This is a manual handoff, not an embedded chatbot. No API key is needed for this page.</p>
+<div class="ma-panel">
+<div class="ma-grid ma-form-grid">
+<div><label for="ma-topic">Exercise or topic</label>
+<select id="ma-topic">
+<option value="general">My own question</option>
+<option value="dot">Exercise 1: Dot product</option>
+<option value="gradient">Exercise 2: Gradient</option>
+<option value="probability">Exercise 3: Conditional probability</option>
+<option value="update">Exercise 4: Gradient descent</option>
+<option value="lab">Gradient-descent theory</option>
+<option value="regression">Exercise 5: Interactive regression</option>
+</select>
+</div>
+<div><label for="ma-mode">Type of help</label>
+<select id="ma-mode">
+<option value="hint">Give me a hint, not the answer</option>
+<option value="explain">Explain the underlying theory</option>
+<option value="check">Check my attempted solution</option>
+<option value="practice">Give me a similar exercise</option>
+<option value="solution">Show a worked solution</option>
+</select>
+</div>
+</div>
+<label for="ma-question">Your question or attempted solution</label>
+<textarea id="ma-question" maxlength="4000" placeholder="What have you tried? Where do you get stuck?" rows="4"></textarea>
+<button disabled="" id="ma-build-prompt" type="button">Create my prompt</button>
+<p class="ma-small" id="ma-prompt-status" role="status">Nothing is sent to an AI service from this page.</p>
+<label for="ma-prompt">Prompt preview</label>
+<textarea id="ma-prompt" placeholder="Your prompt will appear here for review." readonly="" rows="10"></textarea>
+<div class="ma-actions">
+<button disabled="" id="ma-copy" type="button">Copy prompt</button>
+<a class="ma-button ma-secondary" href="https://chatgpt.com/" rel="noopener noreferrer" target="_blank">Open ChatGPT ↗</a>
+</div>
+<p class="ma-small">Paste the prompt into ChatGPT yourself; opening the link does not transfer it.
+        AI-generated explanations may be wrong. Check calculations against the worked solutions
+        and do not treat generated text as a verified proof.</p>
+</div>
+</section>
+</div>
+
+<script defer src="{{ '/assets/js/math-ai.js' | relative_url }}"></script>
